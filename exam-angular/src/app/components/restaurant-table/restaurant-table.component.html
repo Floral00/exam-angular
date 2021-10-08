@@ -1,0 +1,15 @@
+<h2> Liste des restaurants </h2>
+<table>
+  <tr>
+    <th>Nom</th>
+    <th>Adresse</th>
+    <th>Evaluation Moyenne</th>
+    <th>Détail</th>
+  </tr>
+  <tr *ngFor="let restaurant of restaurants; let i = index">
+    <td>{{restaurant.nom}}</td>
+    <td>{{restaurant.adresse}}</td>
+    <td>{{restaurant.evaluations}}</td>
+    <td><button>Détails</button></td>
+  </tr>
+</table>
