@@ -1,5 +1,5 @@
 export interface Evaluation {
-  username: string,
+  evaluateur: string,
   commentaire: string,
-  notation: number
+  etoiles: number
 }

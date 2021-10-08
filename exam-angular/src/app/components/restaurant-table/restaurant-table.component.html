@@ -6,10 +6,10 @@
     <th>Evaluation Moyenne</th>
     <th>Détail</th>
   </tr>
-  <tr *ngFor="let restaurant of restaurants; let i = index">
+  <tr *ngFor="let restaurant of restaurants; let i = index" [appRestaurantEvaluation] = "getMoyenne(i)" >
     <td>{{restaurant.nom}}</td>
     <td>{{restaurant.adresse}}</td>
-    <td>{{restaurant.evaluations}}</td>
+    <td>{{getMoyenne(i)}}</td>
     <td><button>Détails</button></td>
   </tr>
 </table>

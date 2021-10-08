@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Restaurant} from "../../models/restaurant";
+import {Evaluation} from "../../models/evaluation";
 
 @Component({
   selector: 'app-restaurant-table',
@@ -15,11 +16,15 @@ export class RestaurantTableComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  public getMoyenne(restaurant: Restaurant): number {
-
+  public getMoyenne(index: number): string {
     var somme_note = 0;
-    for(var i in restaurant.evaluations) {
-      somme_note += restaurant.evaluations[i].notation;
+    if(this.restaurants[index].evaluations.length == 0) {
+      return "/";
     }
+    for( var i in this.restaurants[index].evaluations) {
+      somme_note += this.restaurants[index].evaluations[i].etoiles;
+    }
+    var moyenne = somme_note / this.restaurants[index].evaluations.length
+    return moyenne.toString();
   }
 }
